@@ -20,6 +20,16 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Azure for Students(100ca76e-4e9a-47e2-855d-0e4e6841ce03)'
+    Action: 'Start Azure App Service'
+    WebAppName: 'njmah'
+    ConnectionType: 'PublishProfile'
+    PublishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 - task: VSBuild@1
   inputs:
