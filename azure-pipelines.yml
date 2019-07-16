@@ -1,5 +1,13 @@
 # ASP.NET
 # Build and test ASP.NET projects.
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Azure for Students(100ca76e-4e9a-47e2-855d-0e4e6841ce03)'
+    Action: 'Start Azure App Service'
+    WebAppName: 'njoomh'
+    SpecifySlotOrASE: true
+    ResourceGroupName: 'njoomh-rg'
+    Slot: 'production'
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
